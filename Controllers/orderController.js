@@ -77,7 +77,7 @@ const paymentVerification = async (req, res) => {
         });
 
         res.redirect(
-            `http://localhost:3000/paymentsuccess?reference=${razorpay_payment_id}`
+            `https://bettermart-eight.vercel.app/paymentsuccess?reference=${razorpay_payment_id}`
         );
     }
     else {
