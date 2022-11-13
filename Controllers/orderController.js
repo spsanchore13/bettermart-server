@@ -58,7 +58,7 @@ const paymentVerification = async (req, res) => {
     if (isAuthentic) {
         // Database comes here
         const order = await CartModal.find({ userId: userId })
-
+        console.log(order)
         const [{ items, bill }] = order
 
         await OrderModel.create({
@@ -68,6 +68,7 @@ const paymentVerification = async (req, res) => {
             order_id: razorpay_order_id
         })
 
+        await CartModal.deleteOne({ userId })
 
         await PaymentModel.create({
             razorpay_order_id,
