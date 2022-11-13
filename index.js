@@ -12,9 +12,7 @@ const { productRouter } = require("./Route/Products.route");
 const { routeUser } = require("./Route/User.route");
 
 app.use(express.json());
-app.use(cors({
-  origin: "https://bettermart.vercel.app/"
-}));
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 
